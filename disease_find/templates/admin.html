@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<header>
+    <h2>Admin Panel</h2>
+    <nav>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/">Logout</a>
+    </nav>
+</header>
+
+<div class="admin-container">
+
+    <h1>Admin Dashboard 📊</h1>
+
+    <!-- SUMMARY CARDS -->
+    <div class="stats-grid">
+        <div class="stats-card">
+            <h3>👤 Total Users</h3>
+            <p>{{ total_users }}</p>
+        </div>
+
+        <div class="stats-card">
+            <h3>🩺 Total Patients</h3>
+            <p>{{ total_patients }}</p>
+        </div>
+
+        <div class="stats-card">
+            <h3>📅 Total Appointments</h3>
+            <p>{{ total_appointments }}</p>
+        </div>
+
+        <div class="stats-card">
+            <h3>📩 Total Contacts</h3>
+            <p>{{ total_contacts }}</p>
+        </div>
+    </div>
+
+    <!-- USERS -->
+    <div class="admin-card">
+        <h2>👤 Users</h2>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+            </tr>
+            {% for u in users %}
+            <tr>
+                <td>{{ u.id }}</td>
+                <td>{{ u.fullname }}</td>
+                <td>{{ u.email }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+    <!-- PATIENTS -->
+    <div class="admin-card">
+        <h2>🩺 Patients</h2>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Blood Group</th>
+                <th>Symptoms</th>
+                <th>Disease</th>
+            </tr>
+            {% for p in patients %}
+            <tr>
+                <td>{{ p.id }}</td>
+                <td>{{ p.name }}</td>
+                <td>{{ p.age }}</td>
+                <td>{{ p.phone }}</td>
+                <td>{{ p.email }}</td>
+                <td>{{ p.blood_group }}</td>
+                <td>{{ p.symptoms }}</td>
+                <td>{{ p.disease }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+    <!-- APPOINTMENTS -->
+    <div class="admin-card">
+        <h2>📅 Appointments</h2>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Booking ID</th>
+                <th>Name</th>
+                <th>Doctor</th>
+                <th>Date</th>
+                <th>Time</th>
+            </tr>
+            {% for a in appointments %}
+            <tr>
+                <td>{{ a.id }}</td>
+                <td>{{ a.booking_id }}</td>
+                <td>{{ a.name }}</td>
+                <td>{{ a.doctor }}</td>
+                <td>{{ a.date }}</td>
+                <td>{{ a.time }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+    <!-- CONTACTS -->
+    <div class="admin-card">
+        <h2>📩 Contacts</h2>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Message</th>
+            </tr>
+            {% for c in contacts %}
+            <tr>
+                <td>{{ c.id }}</td>
+                <td>{{ c.name }}</td>
+                <td>{{ c.email }}</td>
+                <td>{{ c.phone }}</td>
+                <td>{{ c.message }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+</div>
+
+</body>
+</html>

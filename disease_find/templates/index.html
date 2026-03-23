@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HealthCare Center</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header id="header">
+    <div class="logo">
+        <span class="logo-icon">🏥</span>
+        <span class="logo-text">HealthCare Center</span>
+    </div>
+
+    <nav>
+        <a href="/">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="/appointment">Appointment</a>
+        <a href="/contact">Contact</a>
+        <a href="/signin">
+            <button class="disease-btn">🦠 Find Disease</button>
+        </a>
+    </nav>
+</header>
+
+
+
+
+
+<!-- HERO SECTION -->
+<section class="hero" id="home">
+    <div class="hero-content">
+        <h1>Advanced Healthcare <br> With Compassion & Excellence</h1>
+        <p>World-class medical services with experienced specialists and patient-centered care. Your health is our priority.</p>
+        <a href="/appointment" class="btn">Book Appointment</a>
+    </div>
+</section>
+
+<!-- ABOUT SECTION -->
+<section class="about" id="about">
+    <h2>About Our Hospital</h2>
+    <div class="content-box">
+        <p>We provide high-quality healthcare services with experienced doctors and modern equipment. Our team ensures personalized care and complete patient satisfaction.</p>
+    </div>
+</section>
+
+<!-- SERVICES SECTION -->
+<section class="services" id="services">
+    <h2>Our Services</h2>
+    <div class="service-box">
+        <div class="card">
+            <h3>General Checkup</h3>
+            <p>Comprehensive health examinations using modern diagnostics.</p>
+        </div>
+        <div class="card">
+            <h3>Heart Care</h3>
+            <p>Advanced cardiology treatments and expert monitoring.</p>
+        </div>
+        <div class="card">
+            <h3>Emergency Care</h3>
+            <p>24/7 emergency support with ambulance services.</p>
+        </div>
+        <div class="card">
+            <h3>Child Specialist</h3>
+            <p>Expert pediatricians for complete child healthcare.</p>
+        </div>
+    </div>
+</section>
+
+<!-- DOCTORS SECTION -->
+<section class="doctors" id="doctors">
+    <h2>Meet Our Doctors</h2>
+    <div class="doctor-box">
+        <div class="doctor-card">
+            <h3>Dr. Amit Sharma</h3>
+            <p>Cardiologist</p>
+        </div>
+        <div class="doctor-card">
+            <h3>Dr. Neha Verma</h3>
+            <p>Pediatrician</p>
+        </div>
+        <div class="doctor-card">
+            <h3>Dr. Rahul Mehta</h3>
+            <p>General Physician</p>
+        </div>
+    </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+    <h2>What Our Patients Say</h2>
+    <div class="testimonial-box">
+        <p>"Excellent service and caring doctors. Highly recommended!"</p>
+        <p>"Modern facilities and very friendly staff."</p>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+    <h2>Contact Us</h2>
+    <div class="contact-box">
+        <p>Email: info@healthcarehospital.com</p>
+        <p>Phone: +91 9876543210</p>
+        <p>Address: Main Road, Your City, India</p>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>© 2026 HealthCare Hospital | All Rights Reserved</p>
+</footer>
+<!-- ✅ SWEET ALERT CDN -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<!-- ✅ SUCCESS POPUP -->
+<script>
+const params = new URLSearchParams(window.location.search);
+if (params.get("success") === "1") {
+    Swal.fire({
+        title: "Appointment Confirmed!",
+        text: "Doctor will contact you shortly.",
+        icon: "success",
+        timer: 3000,
+        showConfirmButton: false
+    });
+}
+</script>
+
+
+</body>
+</html>

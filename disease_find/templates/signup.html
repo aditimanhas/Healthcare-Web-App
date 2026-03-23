@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='custom.css') }}">
+</head>
+<body class="auth-body">
+
+<div class="auth-container">
+    <div class="auth-left">
+        <h1>Join HealthCare</h1>
+        <p>Create your account to manage appointments and health services.</p>
+    </div>
+
+    <div class="auth-right">
+        <h2>Create Account</h2>
+
+        <form method="POST">
+            <input type="text" name="fullname" placeholder="Full Name" required>
+            <input type="email" name="email" placeholder="Email Address" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit">Sign Up</button>
+        </form>
+
+        <p>Already have account? <a href="/signin">Sign In</a></p>
+    </div>
+</div>
+
+<!-- ✅ SWEET ALERT -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+{% if error %}
+<script>
+Swal.fire({
+    icon: "error",
+    title: "Signup Failed",
+    text: "{{ error }}"
+});
+</script>
+{% endif %}
+
+{% if success %}
+<script>
+Swal.fire({
+    icon: "success",
+    title: "Account Created!",
+    text: "You can now login",
+    timer: 2000,
+    showConfirmButton: false
+});
+</script>
+{% endif %}
+
+</body>
+</html>

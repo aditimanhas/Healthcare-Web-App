@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body class="result-body">
+
+    <div class="result-container">
+        <div class="result-card">
+            <h1>🩺 Prediction Result</h1>
+
+            <div class="result-info">
+                <p><strong>Name:</strong> {{ name }}</p>
+                <p><strong>Predicted Disease:</strong> <span class="disease-name">{{ disease }}</span></p>
+            </div>
+
+            <div class="result-section">
+                <h3>Selected Symptoms</h3>
+                {% if symptoms %}
+                    <div class="symptom-tags">
+                        {% for symptom in symptoms %}
+                            <span class="tag">{{ symptom }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    <p>No symptoms selected.</p>
+                {% endif %}
+            </div>
+
+            <div class="result-section">
+                <h3>Precautions</h3>
+                {% if precautions %}
+                    <ul class="precaution-list">
+                        {% for precaution in precautions %}
+                            <li>{{ precaution }}</li>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    <p>No precautions available.</p>
+                {% endif %}
+            </div>
+
+            <div class="result-actions">
+                <a href="/disease" class="result-btn">Check Again</a>
+                <a href="/dashboard" class="result-btn secondary-btn">Dashboard</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

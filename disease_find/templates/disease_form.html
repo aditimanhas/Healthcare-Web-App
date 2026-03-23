@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Disease Prediction</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body class="disease-body">
+
+<div class="disease-container">
+
+    <h1>🩺 Disease Prediction</h1>
+    <p>Select your symptoms and check your health instantly</p>
+
+    <form action="/predict" method="POST">
+
+        <!-- NAME + AGE -->
+        <div class="input-group">
+            <!-- NAME + AGE -->
+<div class="input-group">
+    <input type="text" name="name" placeholder="Full Name" required>
+    <input type="email" name="email" placeholder="Email" required>
+    <input type="tel" name="phone" placeholder="Phone Number" required>
+    <input type="number" name="age" placeholder="Age" required>
+</div>
+            
+        </div>
+
+        <!-- BLOOD GROUP -->
+        <select name="blood_group" required>
+            <option value="">Select Blood Group</option>
+            {% for bg in blood_groups %}
+                <option value="{{ bg }}">{{ bg }}</option>
+            {% endfor %}
+        </select>
+
+        <!-- SEARCH -->
+        <input type="text" id="searchSymptom" placeholder="🔍 Search symptoms...">
+
+        <!-- SYMPTOMS -->
+        <div class="symptom-grid" id="symptomList">
+            {% for symptom in symptoms %}
+                <label>
+                    <input type="checkbox" name="symptoms" value="{{ symptom }}">
+                    {{ symptom }}
+                </label>
+            {% endfor %}
+        </div>
+
+        <button class="predict-btn">Predict Disease</button>
+
+    </form>
+
+</div>
+
+<!-- SEARCH SCRIPT -->
+<script>
+document.getElementById("searchSymptom").addEventListener("keyup", function(){
+    let value = this.value.toLowerCase();
+    let items = document.querySelectorAll("#symptomList label");
+
+    items.forEach(item => {
+        item.style.display = item.innerText.toLowerCase().includes(value) ? "block" : "none";
+    });
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<header>
+    <h2>HealthCare</h2>
+    <nav>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/disease">Disease</a>
+        <a href="/appointment">Appointment</a>
+        <a href="/contact">Contact</a>
+        <a href="/">Logout</a>
+    </nav>
+</header>
+
+<div class="dashboard-container">
+
+    <h1>Welcome, {{user}} 👋</h1>
+
+    <div class="dashboard-cards">
+
+        <div class="dash-card">
+            <h3>🩺 Check Disease</h3>
+            <p>Predict disease based on symptoms</p>
+            <a href="/disease">Open</a>
+        </div>
+
+        <div class="dash-card">
+            <h3>📅 Book Appointment</h3>
+            <p>Schedule doctor appointment</p>
+            <a href="/appointment">Book</a>
+        </div>
+
+        <div class="dash-card">
+            <h3>📊 View Records</h3>
+            <p>See patient & health data</p>
+            <a href="/admin_login">View</a>
+        </div>
+
+        <div class="dash-card">
+            <h3>📩 Contact Support</h3>
+            <p>Send message to support team</p>
+            <a href="/contact">Contact</a>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
